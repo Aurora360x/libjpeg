@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Xbox 360">
+      <Configuration>Debug</Configuration>
+      <Platform>Xbox 360</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Xbox 360">
+      <Configuration>Release</Configuration>
+      <Platform>Xbox 360</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D618E216-0103-44E3-8494-BF007B65FD64}</ProjectGuid>
+    <Keyword>Xbox360Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Xbox 360'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Xbox 360'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Xbox 360'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Xbox 360'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Xbox 360'">
+    <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Xbox 360'">
+    <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Xbox 360'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <ExceptionHandling>false</ExceptionHandling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeaderOutputFile>$(OutDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PreprocessorDefinitions>_DEBUG;_XBOX;_SECURE_SCL=1;</PreprocessorDefinitions>
+      <CallAttributedProfiling>Disabled</CallAttributedProfiling>
+      <AdditionalIncludeDirectories>..\..\include;..\..\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>Default</CompileAs>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <AdditionalOptions>-QVMX128 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Xbox 360'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <StringPooling>false</StringPooling>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <ExceptionHandling>false</ExceptionHandling>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeaderOutputFile>$(OutDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>_XBOX;_SECURE_SCL=0;NDEBUG</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\include;..\..\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <CompileAs>Default</CompileAs>
+      <PreschedulingOptimization>true</PreschedulingOptimization>
+      <InlineAssemblyOptimization>true</InlineAssemblyOptimization>
+      <AdditionalOptions>-QVMX128 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalOptions>-LTCG  %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\include\jerror.c" />
+    <ClCompile Include="..\..\source\jbufdatasrc.c" />
+    <ClCompile Include="..\..\source\jcapimin.c" />
+    <ClCompile Include="..\..\source\jcapistd.c" />
+    <ClCompile Include="..\..\source\jccoefct.c" />
+    <ClCompile Include="..\..\source\jccolor.c" />
+    <ClCompile Include="..\..\source\jcdctmgr.c" />
+    <ClCompile Include="..\..\source\jchuff.c" />
+    <ClCompile Include="..\..\source\jcinit.c" />
+    <ClCompile Include="..\..\source\jcmainct.c" />
+    <ClCompile Include="..\..\source\jcmarker.c" />
+    <ClCompile Include="..\..\source\jcmaster.c" />
+    <ClCompile Include="..\..\source\jcomapi.c" />
+    <ClCompile Include="..\..\source\jcparam.c" />
+    <ClCompile Include="..\..\source\jcphuff.c" />
+    <ClCompile Include="..\..\source\jcprepct.c" />
+    <ClCompile Include="..\..\source\jcsample.c" />
+    <ClCompile Include="..\..\source\jctrans.c" />
+    <ClCompile Include="..\..\source\jdapimin.c" />
+    <ClCompile Include="..\..\source\jdapistd.c" />
+    <ClCompile Include="..\..\source\jdatadst.c" />
+    <ClCompile Include="..\..\source\jdatasrc.c" />
+    <ClCompile Include="..\..\source\jdcoefct.c" />
+    <ClCompile Include="..\..\source\jdcolor.c" />
+    <ClCompile Include="..\..\source\jddctmgr.c" />
+    <ClCompile Include="..\..\source\jdhuff.c" />
+    <ClCompile Include="..\..\source\jdinput.c" />
+    <ClCompile Include="..\..\source\jdmainct.c" />
+    <ClCompile Include="..\..\source\jdmarker.c" />
+    <ClCompile Include="..\..\source\jdmaster.c" />
+    <ClCompile Include="..\..\source\jdmerge.c" />
+    <ClCompile Include="..\..\source\jdphuff.c" />
+    <ClCompile Include="..\..\source\jdpostct.c" />
+    <ClCompile Include="..\..\source\jdsample.c" />
+    <ClCompile Include="..\..\source\jdtrans.c" />
+    <ClCompile Include="..\..\source\jerror.c" />
+    <ClCompile Include="..\..\source\jfdctflt.c" />
+    <ClCompile Include="..\..\source\jfdctfst.c" />
+    <ClCompile Include="..\..\source\jfdctint.c" />
+    <ClCompile Include="..\..\source\jidctflt.c" />
+    <ClCompile Include="..\..\source\jidctfst.c" />
+    <ClCompile Include="..\..\source\jidctint.c" />
+    <ClCompile Include="..\..\source\jidctred.c" />
+    <ClCompile Include="..\..\source\jmemmgr.c" />
+    <ClCompile Include="..\..\source\jquant1.c" />
+    <ClCompile Include="..\..\source\jquant2.c" />
+    <ClCompile Include="..\..\source\jutils.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\jconfig.h" />
+    <ClInclude Include="..\..\include\jmemsys.h" />
+    <ClInclude Include="..\..\include\jmorecfg.h" />
+    <ClInclude Include="..\..\include\jpeglib.h" />
+    <ClInclude Include="..\..\source\cderror.h" />
+    <ClInclude Include="..\..\source\cdjpeg.h" />
+    <ClInclude Include="..\..\source\jchuff.h" />
+    <ClInclude Include="..\..\source\jdct.h" />
+    <ClInclude Include="..\..\source\jdhuff.h" />
+    <ClInclude Include="..\..\source\jerror.h" />
+    <ClInclude Include="..\..\source\jinclude.h" />
+    <ClInclude Include="..\..\source\jpegint.h" />
+    <ClInclude Include="..\..\source\jversion.h" />
+    <ClInclude Include="..\..\source\transupp.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
